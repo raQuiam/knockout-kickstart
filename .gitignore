@@ -1,2 +1,6 @@
-bower_components
-node_modules
+.DS_Store
+node_modules/
+bower_modules/
+
+# Don't track build output
+dist/

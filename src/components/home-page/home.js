@@ -3,7 +3,7 @@ import homeTemplate from 'text!./home.html';
 
 class HomeViewModel {
     constructor(route) {
-        this.message = ko.observable('Welcome to Knockout Demo!');
+        this.message = ko.observable('Welcome to knockout-kickstart!');
     }
     
     doSomething() {

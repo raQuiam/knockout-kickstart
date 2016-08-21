@@ -19,5 +19,9 @@ Clone this repo on local machine, then install npm and bower packages by type th
 
 ```
 npm install
+```
+```
 bower install
 ```
+
+Chill out.
