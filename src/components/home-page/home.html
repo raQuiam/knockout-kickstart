@@ -1,19 +1,12 @@
-<!--<h2>Tasks</h2>-->
-
-
-<!--<form data-bind="submit: addTask">
-    Add task: <input data-bind="value: newTaskText" placeholder="What needs to be done?" />
-    <button type="submit">Add</button>
-</form>-->
-
-<form data-bind="submit: addTask">
-    <div class="form-group">
-        <!--<label for="txtTask">New Task</label>-->
-        <input id="txtTask" data-bind="value: newTaskText" placeholder="What needs to be done?" class="form-control input-lg" type="text" autocomplete="off">
+<form role="form" data-bind="submit: addTask">
+    <div class="input-group">
+        <input type="text" data-bind="value: newTaskText" placeholder="What needs to be done?" class="form-control input-lg" autocomplete="off">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary btn-lg">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+            </button>
+        </span>
     </div>
-    <button type="submit" class="btn btn-default">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
-    </button>
 </form>
 
 <div data-bind="visible: tasks().length > 0" class="todo-list-container panel panel-default">
@@ -35,14 +28,6 @@
     </ul>
 </div>
 
-<div data-bind="visible: tasks().length == 0" class="todo-list-container jumbotron">
+<div data-bind="visible: isChillTime" class="todo-list-container jumbotron">
     <h1>No tasks, chill time.</h1>
 </div>
-
-<!--<div data-bind="visible: completedTasks().length > 0" class="todo-list-container well well-lg">
-    <h2>This tasks are done</h2>
-    <ul data-bind="foreach: completedTasks" class="todo-list list-group">
-        <li class="list-group-item" data-bind="text: title">
-        </li>
-    </ul>
-</div>-->

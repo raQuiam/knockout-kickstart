@@ -7,7 +7,7 @@ import homeTemplate from 'text!./home.html';
  * @class HomeViewModel
  */
 class HomeViewModel {
-
+    
     /**
      * Creates an instance of HomeViewModel.
      * 
@@ -23,6 +23,10 @@ class HomeViewModel {
                 return !task.isDone() 
             });
         });
+        this.isChillTime = ko.pureComputed(function() {
+            var noOfRemaining = this.incompleteTasks();
+            return noOfRemaining < 1;
+        }, this);
     }
 
     /**
@@ -37,21 +41,26 @@ class HomeViewModel {
         this.tasks.push(task);
         this.newTaskText("");
     }
-
+    
+    /**
+     * Remove existing task
+     * @public
+     * @param {any} task
+     */
     removeTask(task) {
         this.tasks.remove(task);
     }
 
+    /**
+     * Toggle task.isDone 
+     * @public
+     * @param {any} task
+     */
     toggleTaskState(task) {
         var isDone = task.isDone();
         task.isDone(!isDone);
     }
-
-    isChillTime() {
-        
-    }
 }
-
 
 /**
  * Represent a task 
@@ -66,13 +75,10 @@ class Task {
 
         this.cssClasses = ko.pureComputed(function() {
             var allStyles = "list-group-item";
-
             if(this.isDone()) {
                 allStyles += " list-group-item-success";
             }
-
             allStyles += " clearfix";
-
             return allStyles;
         }, this);
     }

@@ -10,10 +10,10 @@
 	margin-bottom: 0;
 }
 
-/*.list-group-item.done {
-	background-color: red;
-}*/
-
 .list-group-item-success > span {
 	text-decoration: line-through;
+}
+
+.todo-list-container.jumbotron > h1 {
+	margin: 0;
 }
