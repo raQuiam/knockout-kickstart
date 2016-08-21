@@ -14,8 +14,8 @@ class HomeViewModel {
      * @param {any} route
      */
     constructor(route) {
-        // this.message = ko.observable('Welcome to knockout-kickstart!');
         var self = this;
+
         this.tasks = ko.observableArray([]);
         this.newTaskText = ko.observable();
         this.incompleteTasks = ko.computed(function() {
@@ -41,10 +41,15 @@ class HomeViewModel {
     removeTask(task) {
         this.tasks.remove(task);
     }
-    
-    // doSomething() {
-    //     this.message('You invoked doSomething() on the viewmodel.');
-    // }
+
+    toggleTaskState(task) {
+        var isDone = task.isDone();
+        task.isDone(!isDone);
+    }
+
+    isChillTime() {
+        
+    }
 }
 
 
@@ -58,6 +63,18 @@ class Task {
     constructor(params) {
         this.title = ko.observable(params.title);
         this.isDone = ko.observable(params.isDone);
+
+        this.cssClasses = ko.pureComputed(function() {
+            var allStyles = "list-group-item";
+
+            if(this.isDone()) {
+                allStyles += " list-group-item-success";
+            }
+
+            allStyles += " clearfix";
+
+            return allStyles;
+        }, this);
     }
 }
 
