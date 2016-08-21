@@ -1,5 +1,38 @@
-<h2>Home</h2>
+<!--<h2>Tasks</h2>-->
 
-<p data-bind='text: message'></p>
 
-<button data-bind='click: doSomething'>Click me</button>
+<!--<form data-bind="submit: addTask">
+    Add task: <input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+    <button type="submit">Add</button>
+</form>-->
+
+<form data-bind="submit: addTask">
+    <div class="form-group">
+        <!--<label for="txtTask">New Task</label>-->
+        <input id="txtTask" data-bind="value: newTaskText" placeholder="What needs to be done?" class="form-control input-lg" type="text">
+    </div>
+    <button type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+    </button>
+</form>
+
+<div data-bind="visible: tasks().length > 0" class="todo-list-container well">
+    <h2 class="todo-list-title">What need to be done?</h2>
+    <ul data-bind="foreach: tasks" class="todo-list list-group">
+        <li class="list-group-item clearfix">
+            <!--<input type="checkbox" data-bind="checked: isDone" />
+            <input data-bind="value: title, disable: isDone" />
+            <a href="#" data-bind="click: $parent.removeTask">Delete</a>-->
+
+            <span data-bind="text: title, attr: {title: title}"></span>
+            <div class="pull-right" role="group">
+                <button class="btn btn-xs btn-success">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button class="btn btn-xs btn-danger">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>

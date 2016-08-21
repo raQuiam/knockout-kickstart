@@ -15,13 +15,22 @@ In the walkthrough lab, we will create a simple TODO knockout application. The p
 See [Yeoman](http://yeoman.io/) and [Generator-ko](https://github.com/SteveSanderson/generator-ko)
 
 ## Setup the code
-Clone this repo on local machine, then install npm and bower packages by type the following commands
+Clone this repo on local machine, then install npm and bower packages by type the following commands (in commandline, under the root folder of the clone).
 
 ```
 npm install
 ```
+Then
 ```
 bower install
 ```
+Then
+```
+gulp serve:src
+```
 
-Chill out.
+Open brower then go to http://localhost:8080
+
+## Troubleshoot
+* There is blank page when I open browser to localhost:8080
+* Something else?
