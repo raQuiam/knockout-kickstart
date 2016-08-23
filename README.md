@@ -1,5 +1,5 @@
 # knockout-kickstart
-Get started with KnockoutJS - http://knockoutjs.com.
+Get started with KnockoutJS - http://knockoutjs.com. Using ES6. 
 Read [Set up the code](#setup-the-code) section to run code from this repo.
 
 ## Fiddle to get you started
