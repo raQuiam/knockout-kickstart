@@ -73,6 +73,18 @@ gulp.task('js', ['js:optimize'], function () {
     return gulp.src('./temp', { read: false }).pipe(clean());
 });
 
+// SASS
+var sass = require('gulp-sass');
+gulp.task('sass', function () {
+  return gulp.src('./src/css/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./src/css'));
+});
+ 
+gulp.task('sass:watch', function () {
+  gulp.watch('./src/css/*.scss', ['sass']);
+});
+
 // Concatenates CSS files, rewrites relative paths to Bootstrap fonts, copies Bootstrap fonts
 gulp.task('css', function () {
     var bowerCss = gulp.src('src/bower_modules/components-bootstrap/css/bootstrap.min.css')

@@ -1,0 +1,26 @@
+#page {
+	margin-top: 80px;
+}
+
+.todo-list-container {
+	margin-top: 30px;
+}
+
+.todo-list.list-group {
+	margin-bottom: 0;
+}
+
+.list-group-item-success {
+	> span {
+		text-decoration: line-through;
+	}
+} 
+
+.todo-list-container {
+	&.jumbotron 
+	{
+		> h1 {
+			margin: 0;
+		}
+	}
+}
