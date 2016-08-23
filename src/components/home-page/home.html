@@ -17,7 +17,7 @@
         <li data-bind="attr: {class: cssClasses}">
             <span data-bind="text: title, attr: {title: title}"></span>
             <div class="pull-right" role="group">
-                <button data-bind="click: $parent.toggleTaskState.bind($parent, $data)" class="btn btn-xs btn-success">
+                <button data-bind="click: $parent.toggleTaskState" class="btn btn-xs btn-success">
                     <span class="glyphicon glyphicon-ok"></span>
                 </button>
                 <button data-bind="click: $parent.removeTask.bind($parent, $data)" class="btn btn-xs btn-danger">

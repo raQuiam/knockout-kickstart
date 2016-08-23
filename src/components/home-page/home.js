@@ -1,5 +1,6 @@
 import ko from 'knockout';
 import homeTemplate from 'text!./home.html';
+import Task from './Task';
 
 /**
  * View Model for home screen, handle TODO application.
@@ -57,30 +58,7 @@ class HomeViewModel {
      * @param {any} task
      */
     toggleTaskState(task) {
-        var isDone = task.isDone();
-        task.isDone(!isDone);
-    }
-}
-
-/**
- * Represent a task 
- * 
- * @class Task
- * @private
- */
-class Task {
-    constructor(params) {
-        this.title = ko.observable(params.title);
-        this.isDone = ko.observable(params.isDone);
-
-        this.cssClasses = ko.pureComputed(function() {
-            var allStyles = "list-group-item";
-            if(this.isDone()) {
-                allStyles += " list-group-item-success";
-            }
-            allStyles += " clearfix";
-            return allStyles;
-        }, this);
+        task.toggleState();
     }
 }
 
